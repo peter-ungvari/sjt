@@ -1,4 +1,4 @@
-var Messages = (function ($) {
+var Messages = (function ($, nano) {
 	
 	var options = { 
 		notFound: function (key) {
@@ -24,4 +24,4 @@ var Messages = (function ($) {
 			});
 		}
 	};
-})(jQuery);
+})(jQuery, nano);
