@@ -5,6 +5,12 @@
 	<title>sjt-messages demo</title>
 </head>
 <body>
+	<p id="p1"></p>
+	<p id="p2"></p>
+	<p id="p3"></p>
+	<p id="p4"></p>
+	<p id="p5"></p>
+
 	<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
 	<script type="text/javascript" src="nano.js"></script>
 	<script type="text/javascript" src="sjt-messages.js"></script>
@@ -15,10 +21,11 @@
 				url: 'messages.php',
 				keys: ['first', 'second', 'third']
 			}).done(function (msg) {
-				console.log(msg('first'));
-				console.log(msg('first', msg('second')));
-				console.log(msg('third', 'fourth'));
-				console.log(msg('not found', msg('NF')));
+				$('#p1').text(msg('first'));
+				$('#p2').text(msg('second'));
+				$('#p3').text(msg('first', msg('second')));
+				$('#p4').text(msg('third', 'fourth'));
+				$('#p5').text(msg('not found', msg('NF')));
 			});
 		});
 	</script>
