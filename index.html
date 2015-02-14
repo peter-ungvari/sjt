@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>sjt-messages demo</title>
+</head>
+<body>
+	<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="nano.js"></script>
+	<script type="text/javascript" src="sjt-messages.js"></script>
+	
+	<script type="text/javascript">
+		jQuery(function ($) {
+			Messages.get({
+				url: 'messages.php',
+				keys: ['first', 'second', 'third']
+			}).done(function (msg) {
+				console.log(msg('first'));
+				console.log(msg('first', msg('second')));
+				console.log(msg('third', 'fourth'));
+				console.log(msg('not found', msg('NF')));
+			});
+		});
+	</script>
+</body>
+</html>
