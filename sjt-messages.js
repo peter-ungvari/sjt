@@ -10,7 +10,7 @@ var Messages = (function ($, nano) {
 		get: function (opts) {
 			$.extend(options, opts);
 			
-			return $.post(options.url, options.keys).then(function (data) {
+			return $.post(options.url, {keys: options.keys}).then(function (data) {
 				return function (key) {
 					var messageTemplate = !data[key] ? options.notFound(key) : data[key];
 					if (arguments.length < 2) {
